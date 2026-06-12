@@ -654,6 +654,8 @@
       tag.style.color=col;tag.style.textShadow="0 0 14px "+col;
       txt.style.color=boys?"#ffd9df":"#ffe1f1";
       tag.textContent=boys?"💥 BOYS VERDICT 💥":"💖 GIRLS VERDICT 💖";
+      $("#againRoast").textContent=boys?"🎲 ROAST ME AGAIN":"💖 ONE MORE COMPLIMENT";
+      $("#shareRoast").textContent=boys?"📸 SHARE ROAST":"📸 SHARE THIS";
       currentRoast=makeRoast(boys);
       showLayer("roast");scramble(txt,currentRoast,1500);
       gsap.to(lTurq.color,{r:boys?1:.1,g:boys?0:.94,b:boys?.2:.85,duration:.6});
