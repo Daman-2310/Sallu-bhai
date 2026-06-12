@@ -156,7 +156,10 @@
 
   /* STATE 3 */
   .roast-card{max-width:720px;border-color:rgba(25,240,216,.3)}
-  #roastTag{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(10px,2.6vw,13px);letter-spacing:.4em;margin-bottom:18px;color:var(--turq)}
+  #roastTag{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(10px,2.6vw,13px);letter-spacing:.4em;margin-bottom:14px;color:var(--turq)}
+  #aura{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:16px;font-family:'Space Mono',monospace}
+  #aura .aura-l{font-size:11px;letter-spacing:.42em;color:var(--t3);align-self:center}
+  #auraVal{font-weight:700;font-size:clamp(36px,10vw,66px);line-height:1;text-shadow:0 0 26px currentColor;font-variant-numeric:tabular-nums}
   #roastText{font-family:'Orbitron',sans-serif;font-weight:700;font-size:clamp(15px,3.8vw,26px);line-height:1.55;
     min-height:3.4em;color:#fff;text-shadow:0 0 12px currentColor;word-break:break-word}
   .r-actions{margin-top:clamp(24px,5vw,36px);display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
@@ -254,8 +257,9 @@
     <section class="layer" id="roast">
       <div class="card roast-card">
         <div id="roastTag" class="reveal" style="--i:0">VERDICT</div>
-        <div id="roastText" class="reveal" style="--i:1"></div>
-        <div class="r-actions reveal" style="--i:2">
+        <div id="aura" class="reveal" style="--i:1"><span class="aura-l">AURA</span><span id="auraVal">0</span></div>
+        <div id="roastText" class="reveal" style="--i:2"></div>
+        <div class="r-actions reveal" style="--i:3">
           <button class="pill primary mag" id="againRoast">🎲 ROAST ME AGAIN</button>
           <button class="pill alt mag" id="shareRoast">📸 SHARE</button>
           <button class="pill ghost mag" id="runAway">🛡️ RUN AWAY SAFELY</button>
@@ -290,100 +294,96 @@
     const $ = (s) => document.querySelector(s);
 
     const BOYS = [
-      "💀 Single since birth. Bhai bhi can't fix this.",
-      "🏋️ Gym jaa beta. Abhi. Isi waqt.",
-      "📵 Her reply: buffering since 2022.",
-      "🚲 Bhai ki cycle ki bhi zyada pull hai.",
-      "💀 0 rizz, 0 reply, 0 aukaat. Triple L.",
-      "🤡 Footpath ne bhi left swipe kiya. RIP.",
-      "🧢 Sigma? Bhai tu NPC hai. Despawn.",
-      "🥶 DMs dry, life dry, tu bhi dry. Sad.",
-      "💀 Aukaat dekh. Phir reply maang, brother.",
-      "😴 So jaa. 2am text mat kar. Begging.",
-      "📉 Aura: -100. Recharge bhi nahi hoga.",
-      "🍳 Fully cooked. No notes. Single, beta.",
-      "💀 Tera eklauta fan: mirror. Bas.",
-      "🛞 SUV ne bhi friendzone kiya. New low.",
-      "🤓 Skill issue. Rizz ke saath respawn kar.",
-      "💸 'Wallet ghar reh gaya' — phir se, Prem?",
-      "🧱 Footpath ke paas zyada game hai. Sach.",
-      "💀 Crush ne block kiya, Bhai ne brake.",
-      "🥲 Single undefeated. 3 saal. Hall of fame.",
-      "📱 Reel pe roya tha. Bhai ne dekha. Chup.",
-      "🦵 'Tere Naam' haircut, 2003 ki lovelife.",
-      "💀 Gym membership expired. Tu bhi, basically.",
-      "🤡 Pose maari, clip kisi ne nahi banayi. L.",
-      "🌱 Touch grass. Aur razor. Aur SEND button.",
-      "👻 Negative aura confirmed. Instant despawn.",
-      "📦 Disappointment delivered. 5-star speed.",
-      "🔋 1% rizz. Charge nahi ho raha. Pathetic.",
-      "💀 Bhai ke 100M fans, tere 1 bot. Humbling.",
-      "😤 Tiger nahi — tu toh barber se darta hai.",
-      "🍜 Maggi aur copium pe zinda. Bas itna hi.",
-      "💀 'Hii' with two i's. Cooked instantly.",
-      "🥶 Situationship flatline. T.O.D: 2022.",
-      "🛑 Vibe check fail. Credit check fail. L.",
-      "💀 Bhai bole: 'beta, ladki ko reply de.'",
-      "🤡 Main character delusion, side-quest life.",
-      "💀 She typed 'k'. Tune essay. RIP, brother.",
-      "🧢 Broke, single, online. Holy trinity.",
-      "💀 Aukaat zero, confidence borrowed. L+ratio.",
-      "😬 Bhai genuinely worried for you. Same.",
-      "💀 Dodged the SUV, not the friendzone.",
-      "🪞 Itna single ki Google bhi suggest karta.",
-      "🎮 5000 hrs ranked, 0 hrs personality. GG.",
-      "🥀 Pour one out for the dead group chat.",
-      "🧊 Cold dodge, colder bed. Single king.",
-      "💀 Permanent single. Likh ke le le, paaji.",
-      "💀 Down bad with no one to be down bad for.",
+      "💀 Plot twist: the SUV was empty. Bhai is in the gym. Where YOU should be, single boy.",
+      "🏋️ Bhai stopped the car just to hand you a gym membership and a reality check. Take both.",
+      "📱 Bhai checked your phone — 0 texts, 47 unfinished games, 1 imaginary girlfriend.",
+      "🧱 Certified single. The footpath has more rizz than you — and it's literally cement.",
+      "🍜 Surviving on Maggi and main-character delusion. The SUV felt bad and swerved.",
+      "📉 Your dodge was elite, your texting game's in a recession. Invest in a personality, brother.",
+      "🛞 You jumped, the SUV stopped, and even the tyres went 'this guy is NOT a threat.'",
+      "🥲 You escaped death, but your situationship is still very much dead. Pour one out.",
+      "📵 You dodged, but your DMs are a graveyard. RIP to all those 'seen 2 days ago'.",
+      "💀 Bhai's bracelet glowed, your future stayed dim. Fix the WiFi and your life, brother.",
+      "🤡 Plot twist: the SUV wasn't the danger. Your search history is. Bhai saw it and braked.",
+      "😤 You think dodging a car makes you Tiger? Brother, you flinch when the barber says 'thoda aur short?'",
+      "💀 You survived, but your gym membership didn't. Last check-in: 3 months ago. Pathetic.",
+      "📚 You jumped left straight into your responsibilities. Now go open the assignments you keep ignoring.",
+      "🚿 You survived! Quick reward: a cold shower and an apology to your sleep schedule.",
+      "🦵 'Tere Naam' haircut, 2003 lovelife, 2050 confidence, zero results. Balanced, brother.",
+      "💀 Plot twist: she didn't friendzone you. The footpath did. And it was unanimous.",
+      "🎮 5000 hours ranked, 0 hours self-improvement. GG. The SUV had better positioning than your life.",
+      "💸 Fast for the SUV, slow for the bill. 'Wallet ghar reh gaya' — again, Prem?",
+      "🧢 'Sigma grindset' but you cried at her reel last night. Bhai saw it. Bhai won't tell. But Bhai knows.",
+      "💀 Bhai has 100 million fans. You have one follower — a bot named 'Gym_Motivation_4499'. Humbling.",
+      "🪞 You posed after the dodge for a clip nobody filmed. The mirror's your only loyal fan, king.",
+      "🤓 Skill issue. Main-character delusion, side-quest personality. Respawn — and pick rizz this time.",
+      "💀 She replied 'k'. You replied with three paragraphs. Dodge THAT energy, not just the bumper.",
+      "🥶 Cold dodge, colder DMs. Even your 'last seen' has moved on, legend.",
+      "📦 Five-star speed delivering disappointment to everyone who believed in you. Zero-star outcome though.",
+      "😴 You survived. Now sleep BEFORE you text her at 2am again, you nocturnal disaster. Bhai is begging.",
+      "💀 Plot twist: you're not 'taking a break' from dating. Dating took a permanent break from you.",
+      "🌱 'Touch grass' is too soft for you. Touch a dumbbell, a razor, and the SEND button on that apology.",
+      "🃏 You called jumping into a pothole 'parkour'. Bhai can fix the car. Bhai can't fix this aura.",
+      "💀 Single since birth, undefeated for years. Honestly? Hall of Fame consistency, brother.",
+      "🔋 You're at 1% rizz and won't charge. Bhai offered you his power bank — for your PERSONALITY.",
+      "🛑 Access denied. Your aura failed the vibe check, the credit check, AND the girlfriend check.",
+      "💀 Plot twist: the SUV slowed down to give you space. Even Bhai felt your loneliness and showed mercy.",
+      "🤡 The footpath swiped left, the SUV swiped left, your crush swiped left. Clean sweep, legend.",
+      "📉 Your glow-up has been 'processing' since 2019. Buffering at 0%, brother.",
+      "🥀 Even your group chat leaves you on 'seen'. That's a special kind of single.",
+      "💀 You dodged the bumper but not the friendzone. Some things move faster than you, champ.",
+      "😬 Bhai's genuinely worried for you. So's the watchman. So's her dad. Universal concern.",
+      "🍳 Fully cooked. Garnished with single. Served cold to absolutely no one, brother.",
+      "💀 Plot twist: it wasn't luck that you survived. The universe just needs someone to roast.",
+      "🎯 Great aim — you hit rock bottom every single time, and with style.",
+      "💀 You peaked dodging that bumper. From here it's downhill, single, and chronically online. Enjoy.",
+      "🧊 You're so single, the cold shoulder you get is just the universe staying consistent, brother.",
     ];
     const GIRLS = [
-      "😏 Patola alert. Saare launde finished.",
-      "🔥 Haaye! Poora ilaaka hila diya, soni.",
-      "👑 Royalty crossing. SUV ne jhuk ke salaam.",
-      "😉 Tu nikli, garmi 2 degree badh gayi.",
-      "💋 Dodge bhi, 3 launde bhi. Multitasking icon.",
-      "💖 Boys down bad. Tu bas walk karti reh.",
-      "✨ Gravity ka bhi crush ho gaya. Iconic.",
-      "🦋 Bhai ka bracelet tujhse match karne chamka.",
-      "💌 50 DMs unread. Stunning hona full-time job.",
-      "😘 SUV ko bhi taste hai — scratch nahi kiya.",
-      "👀 Tu aayi, launde swoon, footpath behosh.",
-      "🌹 'Selfie le le re' — har launda line mein.",
-      "💅 Certified chaos, heels mein. No notes.",
-      "🔥 Streetlights flicker — number maang rahi.",
-      "👑 Out of his league? Tu KHUD league hai.",
-      "😏 Tere nakhre pe woh sab daav pe laga deta.",
-      "💫 Dil SUV se zyada zor se crash hue. Oops.",
-      "🌟 Tu nikli, street 4K mein upgrade. Beautiful.",
-      "💋 Tera 'seen' ek privilege hai. Baant zara.",
-      "😉 Bhai ne aura check kiya, music DOWN kar di.",
-      "🍓 Sweet, sharp, thodi naughty. Perfect trouble.",
-      "🔥 Tu cheez badi hai mast mast, ni soniye.",
-      "💖 Launde personality rewrite kar rahe tere liye.",
-      "🏆 Chak de phatte — poora street obsessed.",
-      "😏 Race 3 vibes: tera dil tera business. Naughty.",
-      "💋 Heartbreaker detected. Frame it, queen.",
-      "✨ Universe ne lighting set ki, tu phir bhi jeet gayi.",
-      "🌷 Itni charming ki illegal honi chahiye. Haaye.",
-      "💕 Soft face, savage reflexes, queen aura. Trifecta.",
-      "😘 'Teri meri prem kahani' teri smile pe shuru.",
-      "👠 Heels mein sprint, zero wobble. Physics rota.",
-      "💖 Tu wajah hai uski theek hui sleep schedule ki.",
-      "🦢 Drama tujhpe chipakta nahi. Untouched icon.",
-      "🔥 Bhai forgot he was driving. Tu hai hi aisi, jaan.",
-      "💎 Pretty, poised, dangerous. Boys deleting their list.",
-      "👑 Sheher ko ticket lagani chahiye tere liye. Iconic.",
-      "😏 Naughty trouble in heels. Launde cooked, queen.",
-      "💋 Tu patola, tu nakhre, poora package. Haaye.",
-      "✨ SUV swerved for a better view. Same, gorgeous.",
-      "💖 Main character tu, baaki sab NPC. Confirmed.",
-      "😉 Bechare launde — tujhe dekh ke single feel karte.",
-      "🔥 Aura +1000. Boys ka aura: -1000. Balance, queen.",
-      "💅 Tu walk kya kari, exes delete ho gaye. Naughty.",
-      "👑 Footpath ne tujhe survive kiya, tu nahi usse.",
-      "😘 Itni soni ki traffic ruk gaya. Haaye teri ada.",
-      "🔥 Boys finished. Group chat meltdown. Queen.",
+      "💖 Bhai checked your aura and turned the music down out of respect. Iconic.",
+      "👑 The SUV braked because royalty was crossing. Bhai knows better than to rush a queen.",
+      "✨ You didn't jump, you glided. Even gravity has a crush on you, gorgeous.",
+      "✨ Plot twist: the SUV stopped to ask for YOUR autograph. Sign it, superstar.",
+      "😉 The car didn't lose control — YOU stole the steering wheel of every heart on this street.",
+      "💎 Too pretty to panic. You dodged in slow-motion like the lead of a music video. Main character.",
+      "🦋 Even Bhai's bracelet glowed brighter just to match your shine. Unfair advantage, queen.",
+      "💌 50 unread texts and counting — being this stunning is basically a full-time job, isn't it?",
+      "🌸 You smiled and the whole SUV's engine stalled. Be careful with that power, gorgeous.",
+      "👠 You crossed that footpath like a runway. Bhai gave a standing ovation from the driver's seat.",
+      "💋 You dodged the SUV AND three boys trying to slide in. Multitasking icon behaviour.",
+      "💕 Soft girl with savage reflexes — the dangerous combo every boy is texting his friends about.",
+      "🌟 The stars rearranged so you'd get better lighting. That's queen treatment, darling.",
+      "😘 Bhai didn't even honk — he didn't want to disturb your glow-up energy. Respectful king.",
+      "🍓 Sweet, stunning, and slightly chaotic — basically the recipe that breaks every boy in your DMs.",
+      "💗 You're the reason 'she's out of my league' was invented. Stay unreachable, queen.",
+      "🌙 Even at full panic you looked ethereal. Some people just can't have a bad angle, huh?",
+      "💃 You turned a footpath emergency into a fashion moment. Vogue is calling — pick up.",
+      "😍 Bhai lowered his sunglasses just to confirm you were real. You are. Unfortunately for all the boys.",
+      "💖 Plot twist: the SUV wasn't out of control. It just wanted a closer look. Same, gorgeous.",
+      "🌷 Being this charming should require a licence. The whole street is officially down bad.",
+      "👸 You glided to safety and somehow looked even better doing it. The audacity of that beauty.",
+      "💫 Hearts crashed harder than the SUV. There's just no surviving you, darling.",
+      "🍯 Sweet enough to stop traffic, sharp enough to dodge it. Bhai is genuinely impressed.",
+      "🌹 You make 'running for your life' look like a perfume ad. Effortless, truly.",
+      "💞 Every boy who saw that dive is rewriting his entire personality for you tonight. As he should.",
+      "👑 You're not out of his league — you ARE the league, the trophy, and the guard turning him away.",
+      "😉 The bracelet is lucky, but honestly YOU are the upgrade it was praying for. Glow on, queen.",
+      "🔥 Warning: too hot for this boring planet. No wonder the car lost control when you walked by.",
+      "💋 Your 'seen' is a privilege boys pray for. Hand it out rarely — and a little cruelly. Perfect.",
+      "✨ You stepped out and the whole street upgraded to 4K. Bless them again tomorrow, beautiful.",
+      "💖 The bracelet's lucky, the SUV's dramatic, but YOU are the main character. Everyone else is an NPC.",
+      "😏 Plot twist: the boys didn't fall for the dodge. They fell the moment you looked back.",
+      "🦢 Drama doesn't stick to you. It admires you from a respectful distance, icon.",
+      "💎 Pretty, poised, and slightly dangerous — the exact combo that makes a boy delete his whole list.",
+      "👀 You walked by and the streetlights flickered trying to get your number. Even the grid is down bad.",
+      "💅 Certified chaos in heels. You crashed his focus, his server, and his 'I don't catch feelings' arc.",
+      "💖 He finally fixed his sleep schedule — just to dream about that one walk you took today.",
+      "🌟 The footpath felt blessed, the SUV felt humbled, every boy felt single. Just another walk for you.",
+      "😘 'Teri meri prem kahani' starts the second you smile. And it never quite ends, naughty.",
+      "👑 The city should charge admission when you step out. Until then it's a free show — everyone's obsessed.",
+      "💋 Plot twist: Bhai stopped the car not to scold anyone, but to ask who you were. Iconic.",
+      "🔥 You're trouble in the best way — the kind boys would happily get into. Stay dangerous, gorgeous.",
+      "✨ You survived in style and left the whole footpath heartbroken. Chaotic queen energy — never change.",
     ];
 
     // Shuffle-bag picker: no repeats until the whole pool is used, persisted across
@@ -410,88 +410,88 @@
     const GEN = {
       boys: {
         open: [
-          "💀 0 rizz detected",
-          "🚲 Bhai ki cycle se bhi kam pull",
-          "🤡 Footpath ne left swipe kiya",
-          "🧢 Sigma? NPC confirmed",
-          "📵 Her reply still buffering",
-          "🥶 DMs full Sahara",
-          "📉 Aura on airplane mode",
-          "🍳 Fully cooked",
-          "💸 'Wallet ghar reh gaya' again",
-          "🎮 5000 hrs ranked, 0 personality",
-          "🦵 Haircut from 2003",
-          "💀 Crush ne block kiya",
-          "🛞 SUV ne friendzone kiya",
-          "🥀 Group chat dead",
-          "😴 2am texter detected",
-          "📱 Reel pe roya",
-          "🔋 1% rizz, no charge",
-          "🤓 Skill issue, brother",
-          "💀 Single since birth",
-          "🧊 Cold dodge, colder bed",
+          "💀 Your DMs are a certified graveyard",
+          "🏋️ Your gym arc is still in pre-production",
+          "📵 Her last reply has been buffering since 2022",
+          "🧱 The footpath has more rizz than you",
+          "🎮 5000 hours ranked, zero hours of personality",
+          "💸 Your wallet is somehow always 'at home'",
+          "🥶 Your texting game is drier than the footpath",
+          "📉 Your aura's been on airplane mode for years",
+          "🪞 The mirror is your only loyal fan",
+          "🤡 Your confidence is borrowed and long overdue",
+          "🥀 Even your group chat leaves you on seen",
+          "💀 Your glow-up has been buffering since 2019",
+          "😴 You're a confirmed 2am over-texter",
+          "🦵 Your haircut is older than your last W",
+          "📱 'Last seen' is your longest relationship",
+          "🤓 Your lovelife difficulty is set to impossible",
+          "💀 You're single with Hall-of-Fame consistency",
+          "🧊 You give the cold shoulder a run for its money",
+          "🛞 Even the SUV decided you weren't worth it",
+          "🥲 Your situationship flatlined three weeks ago",
         ],
         end: [
-          "— hard L, beta. 💀",
-          "— gym jaa. 🏋️",
-          "— cooked. 🍳",
+          "— certified single, brother. 💀",
+          "— hit the gym, beta. 🏋️",
+          "— massive L. 📉",
+          "— cooked, fully. 🍳",
           "— RIP. 🥀",
-          "— single confirmed. 💀",
-          "— despawn. 👻",
-          "— Bhai concerned. 😬",
           "— skill issue. 🎮",
           "— touch grass. 🌱",
-          "— L plus ratio. 📉",
-          "— aukaat dekh. 🧢",
-          "— so jaa, beta. 😴",
+          "— Bhai's concerned. 😬",
+          "— go to sleep, champ. 😴",
+          "— and she still didn't care. 📵",
+          "— aura: negative. 👻",
+          "— reset your whole life. 🔄",
           "— no notes. ✍️",
-          "— GG. 🎮",
+          "— enjoy the single life. 🤡",
         ]
       },
       girls: {
         open: [
-          "😏 Patola alert",
-          "🔥 Poora ilaaka hila diya",
-          "👑 Royalty crossing",
-          "😉 Garmi 2 degree badh gayi",
-          "💋 Dodge bhi, launde bhi",
-          "✨ Gravity ka crush ho gaya",
-          "🦋 Bracelet tujhse match kar gaya",
-          "💌 50 DMs unread",
-          "👀 Launde swoon, footpath behosh",
-          "🌹 Har launda line mein",
-          "💅 Chaos in heels",
-          "🔥 Streetlights tera number maang rahi",
-          "👑 Tu KHUD league hai",
-          "🌟 Street 4K mein upgrade",
-          "💫 Dil crash hue",
-          "🍓 Sweet, sharp, naughty",
-          "😘 Traffic ruk gaya",
-          "💖 Main character tu",
-          "🏆 Poora street obsessed",
-          "😏 Boys deleting their list",
+          "👑 You crossed like royalty and the SUV bowed",
+          "✨ You glided and gravity caught feelings",
+          "💖 Bhai turned the music down out of respect",
+          "💋 You stole the wheel of every heart on the street",
+          "🦋 Even the bracelet glowed brighter to match you",
+          "💌 Your 50 unread DMs are basically a full-time job",
+          "😘 The SUV had taste and refused to scratch a masterpiece",
+          "👀 Traffic stopped just to admire the view",
+          "🌹 Every boy slipped into 'selfie le le re' mode",
+          "💅 You caused beautiful chaos in heels",
+          "🔥 The streetlights flickered for your number",
+          "👑 You're not out of his league, you ARE the league",
+          "🌟 The whole street upgraded to 4K when you stepped out",
+          "💫 Hearts crashed harder than the SUV",
+          "🍓 You're sweet, sharp, and lovely trouble",
+          "😍 Bhai lowered his sunglasses to confirm you were real",
+          "💎 You're pretty, poised, and slightly dangerous",
+          "🌙 You looked ethereal even mid-panic",
+          "💃 You turned an emergency into a runway",
+          "🏆 The whole street's obsessed and you didn't even notice",
         ],
         end: [
           "— queen behaviour. 👑",
-          "— launde finished. 😩",
-          "— iconic. ✨",
-          "— haaye. 🔥",
-          "— no notes. 💅",
-          "— boys down bad. 😩",
-          "— patola. 💖",
-          "— main character. 🌟",
-          "— frame it. 🖼️",
-          "— naughty trouble. 😏",
-          "— never change, soni. 💕",
-          "— jaaneman. 💫",
-          "— chak de phatte. 🏆",
+          "— absolutely iconic. ✨",
+          "— boys are down bad. 😩",
+          "— main character, no contest. 🌟",
+          "— stay unreachable, darling. 💫",
+          "— certified heartbreaker. 💋",
+          "— Vogue's calling. 📞",
+          "— the audacity of that beauty. 😍",
+          "— never change, gorgeous. 💕",
+          "— lovely trouble. 😏",
+          "— frame it forever. 🖼️",
+          "— the footpath didn't deserve you. 🌷",
+          "— glow on, queen. 🔥",
           "— sorry not sorry. 😉",
         ]
       }
     };
     // 35% hand-written premium line, 65% freshly generated combo; never repeats the last.
     function makeRoast(boys) {
-      if (Math.random() < 0.35) return bagPick(boys);
+      if (Math.random() < 0.5) return bagPick(boys);
       const P = boys ? GEN.boys : GEN.girls;
       const gk = boys ? "sallu_gen_b" : "sallu_gen_g";
       let s, last = localStorage.getItem(gk), tries = 0;
@@ -691,10 +691,34 @@
       $("#shareRoast").textContent=boys?"📸 SHARE ROAST":"📸 SHARE THIS";
       currentRoast=makeRoast(boys);
       showLayer("roast");scramble(txt,currentRoast,1500);
+      // aura score: boys tank it, girls farm it
+      const aura=boys?-((1+Math.floor(Math.random()*99))*100):((10+Math.floor(Math.random()*990))*100);
+      currentAura=aura;animateAura(aura);
+      burst(boys?["💀","🤡","📉","🥀","🧢","💔"]:["👑","💖","✨","🔥","💋","🦋","💅"]);
       gsap.to(lTurq.color,{r:boys?1:.1,g:boys?0:.94,b:boys?.2:.85,duration:.6});
       gsap.to(camera.position,{z:6.5,duration:.6,ease:"power2.out"});
     }
-    let currentRoast="", lastKind="boys";
+    let currentRoast="", lastKind="boys", currentAura=0;
+
+    // aura score count-up (boys negative / girls positive) + tiny emoji burst
+    function animateAura(value){
+      const el=$("#auraVal");if(!el)return;const start=performance.now(),dur=1100;
+      el.style.color=value<0?"#ff2347":"#ff39a7";
+      const sign=value<0?"−":"+",abs=Math.abs(value);
+      (function tk(now){const p=Math.min(1,(now-start)/dur),e=1-Math.pow(1-p,3),v=Math.round(abs*e);
+        el.textContent=sign+v.toLocaleString("en-IN");if(p<1)requestAnimationFrame(tk);})(start);
+    }
+    function burst(set){
+      for(let i=0;i<18;i++){
+        const e=document.createElement("div");e.textContent=set[(Math.random()*set.length)|0];
+        e.style.cssText="position:fixed;left:50%;top:44%;z-index:9;pointer-events:none;will-change:transform,opacity;font-size:"+(20+Math.random()*24)+"px";
+        document.body.appendChild(e);
+        const ang=Math.random()*Math.PI*2,dist=130+Math.random()*260;
+        gsap.fromTo(e,{x:0,y:0,opacity:1,scale:.4,rotation:0},
+          {x:Math.cos(ang)*dist,y:Math.sin(ang)*dist-70,opacity:0,scale:1.25,rotation:(Math.random()-.5)*220,
+           duration:1+Math.random()*.7,ease:"power2.out",onComplete:()=>e.remove()});
+      }
+    }
 
     function runAway(){
       if(state==="resetting")return;state="resetting";
@@ -713,7 +737,7 @@
     $("#runAway").addEventListener("click",runAway);
     $("#againRoast").addEventListener("click",()=>doRoast(lastKind));
     $("#shareRoast").addEventListener("click",async()=>{
-      const text=currentRoast+"\n\n— survived Sallu Bhai's footpath 💀 try it 👇";
+      const text=currentRoast+"\n\nAURA "+(currentAura<0?"−":"+")+Math.abs(currentAura).toLocaleString("en-IN")+" · Sallu Bhai's footpath survival 💀 try it 👇\nsallu-bhai.netlify.app";
       try{ if(navigator.share){ await navigator.share({title:"Sallu Bhai Footpath Survival",text}); } else { await navigator.clipboard.writeText(text); toast("Roast copied! Paste it in your story 📋"); } }
       catch(e){ toast("Screenshot this & post it 📸"); }
     });
