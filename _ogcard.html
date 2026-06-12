@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  .card{position:relative;width:1200px;height:630px;background:radial-gradient(120% 100% at 30% 40%,#0a1620 0%,#04060a 55%,#000 100%);
+    font-family:'Orbitron',sans-serif;color:#fff;overflow:hidden}
+  /* nebula blobs */
+  .b{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+  .b1{width:420px;height:420px;left:-80px;top:-120px;background:#19f0d8}
+  .b2{width:380px;height:380px;right:120px;bottom:-140px;background:#ff39a7}
+  .b3{width:300px;height:300px;right:330px;top:-110px;background:#7a00ff;opacity:.4}
+  /* scanlines */
+  .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px);opacity:.5}
+  /* corner brackets */
+  .fr i{position:absolute;width:34px;height:34px;border:2px solid rgba(25,240,216,.5)}
+  .fr i:nth-child(1){top:26px;left:26px;border-right:0;border-bottom:0}
+  .fr i:nth-child(2){top:26px;right:26px;border-left:0;border-bottom:0}
+  .fr i:nth-child(3){bottom:26px;left:26px;border-right:0;border-top:0}
+  .fr i:nth-child(4){bottom:26px;right:26px;border-left:0;border-top:0}
+  /* left text */
+  .copy{position:absolute;left:70px;top:0;height:630px;width:680px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .kick{font-family:'Space Mono',monospace;font-size:18px;letter-spacing:8px;color:#19f0d8;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+  .kick::before{content:"";width:40px;height:2px;background:#19f0d8;box-shadow:0 0 10px #19f0d8}
+  h1{font-weight:900;font-size:96px;line-height:.96;letter-spacing:1px;text-shadow:0 0 24px rgba(25,240,216,.7),0 0 60px rgba(25,240,216,.4)}
+  h1 .p{color:#ff39a7;text-shadow:0 0 24px rgba(255,57,167,.7),0 0 60px rgba(255,57,167,.4)}
+  .tag{font-family:'Space Mono',monospace;font-size:24px;line-height:1.4;color:rgba(232,240,255,.82);max-width:560px;font-weight:400}
+  .btns{display:flex;gap:16px;margin-top:8px}
+  .chip{font-size:18px;font-weight:800;letter-spacing:1px;padding:13px 22px;border-radius:12px}
+  .b-boys{color:#ffd9df;border:2px solid #ff2347;box-shadow:0 0 24px rgba(255,35,71,.5),inset 0 0 18px rgba(255,35,71,.2)}
+  .b-girls{color:#ffe1f1;border:2px solid #ff39a7;box-shadow:0 0 24px rgba(255,57,167,.5),inset 0 0 18px rgba(255,57,167,.2)}
+  .url{position:absolute;left:70px;bottom:46px;font-family:'Space Mono',monospace;font-size:20px;letter-spacing:3px;color:#19f0d8;
+    border:1.5px solid rgba(25,240,216,.4);padding:9px 16px;border-radius:10px;background:rgba(25,240,216,.06)}
+  /* bracelet */
+  .stage{position:absolute;right:60px;top:50%;transform:translateY(-50%);width:420px;height:420px;display:flex;align-items:center;justify-content:center}
+  .glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(25,240,216,.45),transparent 62%);filter:blur(8px)}
+  .ring{position:relative;width:330px;height:330px;border-radius:50%;
+    border:34px solid;border-color:#1c5a55 #2a7a73 #0d322f #2a7a73;
+    background:conic-gradient(from 220deg,#0d322f,#2a7a73,#9ff7ec,#2a7a73,#0d322f);
+    box-shadow:0 0 70px rgba(25,240,216,.6),inset 0 0 60px rgba(25,240,216,.4),0 0 140px rgba(25,240,216,.3)}
+  .ring::before{content:"";position:absolute;inset:-2px;border-radius:50%;border:7px solid #19f0d8;box-shadow:0 0 34px #19f0d8,inset 0 0 34px #19f0d8}
+  .ring::after{content:"";position:absolute;inset:24px;border-radius:50%;background:radial-gradient(circle at 38% 32%,rgba(255,255,255,.25),transparent 45%)}
+</style></head>
+<body>
+  <div class="card">
+    <div class="b b1"></div><div class="b b2"></div><div class="b b3"></div>
+    <div class="scan"></div>
+    <div class="fr"><i></i><i></i><i></i><i></i></div>
+    <div class="stage"><div class="glow"></div><div class="ring"></div></div>
+    <div class="copy">
+      <div class="kick">Footpath Survival Portal</div>
+      <h1>SURVIVE<br/><span class="p">SALLU BHAI</span></h1>
+      <div class="tag">Tap the lucky charm. Dodge the SUV.<br/>Get absolutely roasted. 💀🔥</div>
+      <div class="btns"><div class="chip b-boys">🏃‍♂️ BOYS</div><div class="chip b-girls">🏃‍♀️ GIRLS</div></div>
+    </div>
+    <div class="url">sallu-bhai.netlify.app</div>
+  </div>
+</body></html>
